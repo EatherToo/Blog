@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.blog.dao.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.blog.entity.Role" >
+    <id column="role_id" property="roleId" jdbcType="BIGINT" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="role_value" property="roleValue" jdbcType="CHAR" />
+    <result column="role_url" property="roleUrl" jdbcType="VARCHAR" />
+    <result column="role_enab" property="roleEnab" jdbcType="BIT" />
+    <result column="role_note" property="roleNote" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    role_id, role_name, role_value, role_url, role_enab, role_note
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from role
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from role
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.blog.entity.Role" >
+    insert into role (role_id, role_name, role_value, 
+      role_url, role_enab, role_note
+      )
+    values (#{roleId,jdbcType=BIGINT}, #{roleName,jdbcType=VARCHAR}, #{roleValue,jdbcType=CHAR}, 
+      #{roleUrl,jdbcType=VARCHAR}, #{roleEnab,jdbcType=BIT}, #{roleNote,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.blog.entity.Role" >
+    insert into role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        role_id,
+      </if>
+      <if test="roleName != null" >
+        role_name,
+      </if>
+      <if test="roleValue != null" >
+        role_value,
+      </if>
+      <if test="roleUrl != null" >
+        role_url,
+      </if>
+      <if test="roleEnab != null" >
+        role_enab,
+      </if>
+      <if test="roleNote != null" >
+        role_note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleValue != null" >
+        #{roleValue,jdbcType=CHAR},
+      </if>
+      <if test="roleUrl != null" >
+        #{roleUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="roleEnab != null" >
+        #{roleEnab,jdbcType=BIT},
+      </if>
+      <if test="roleNote != null" >
+        #{roleNote,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.blog.entity.Role" >
+    update role
+    <set >
+      <if test="roleName != null" >
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleValue != null" >
+        role_value = #{roleValue,jdbcType=CHAR},
+      </if>
+      <if test="roleUrl != null" >
+        role_url = #{roleUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="roleEnab != null" >
+        role_enab = #{roleEnab,jdbcType=BIT},
+      </if>
+      <if test="roleNote != null" >
+        role_note = #{roleNote,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.blog.entity.Role" >
+    update role
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      role_value = #{roleValue,jdbcType=CHAR},
+      role_url = #{roleUrl,jdbcType=VARCHAR},
+      role_enab = #{roleEnab,jdbcType=BIT},
+      role_note = #{roleNote,jdbcType=VARCHAR}
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.blog.dao.CommentsMapper" >
+  <resultMap id="BaseResultMap" type="com.blog.entity.Comments" >
+    <id column="com_id" property="comId" jdbcType="BIGINT" />
+    <result column="con_id" property="conId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="com_time" property="comTime" jdbcType="TIMESTAMP" />
+    <result column="com_subid" property="comSubid" jdbcType="VARCHAR" />
+    <result column="com_upvote" property="comUpvote" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.blog.entity.Comments" extends="BaseResultMap" >
+    <result column="com_text" property="comText" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    com_id, con_id, user_id, com_time, com_subid, com_upvote
+  </sql>
+  <sql id="Blob_Column_List" >
+    com_text
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from comments
+    where com_id = #{comId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from comments
+    where com_id = #{comId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.blog.entity.Comments" >
+    insert into comments (com_id, con_id, user_id, 
+      com_time, com_subid, com_upvote, 
+      com_text)
+    values (#{comId,jdbcType=BIGINT}, #{conId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+      #{comTime,jdbcType=TIMESTAMP}, #{comSubid,jdbcType=VARCHAR}, #{comUpvote,jdbcType=INTEGER}, 
+      #{comText,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.blog.entity.Comments" >
+    insert into comments
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="comId != null" >
+        com_id,
+      </if>
+      <if test="conId != null" >
+        con_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="comTime != null" >
+        com_time,
+      </if>
+      <if test="comSubid != null" >
+        com_subid,
+      </if>
+      <if test="comUpvote != null" >
+        com_upvote,
+      </if>
+      <if test="comText != null" >
+        com_text,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="comId != null" >
+        #{comId,jdbcType=BIGINT},
+      </if>
+      <if test="conId != null" >
+        #{conId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="comTime != null" >
+        #{comTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="comSubid != null" >
+        #{comSubid,jdbcType=VARCHAR},
+      </if>
+      <if test="comUpvote != null" >
+        #{comUpvote,jdbcType=INTEGER},
+      </if>
+      <if test="comText != null" >
+        #{comText,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.blog.entity.Comments" >
+    update comments
+    <set >
+      <if test="conId != null" >
+        con_id = #{conId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="comTime != null" >
+        com_time = #{comTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="comSubid != null" >
+        com_subid = #{comSubid,jdbcType=VARCHAR},
+      </if>
+      <if test="comUpvote != null" >
+        com_upvote = #{comUpvote,jdbcType=INTEGER},
+      </if>
+      <if test="comText != null" >
+        com_text = #{comText,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where com_id = #{comId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.blog.entity.Comments" >
+    update comments
+    set con_id = #{conId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      com_time = #{comTime,jdbcType=TIMESTAMP},
+      com_subid = #{comSubid,jdbcType=VARCHAR},
+      com_upvote = #{comUpvote,jdbcType=INTEGER},
+      com_text = #{comText,jdbcType=LONGVARCHAR}
+    where com_id = #{comId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.blog.entity.Comments" >
+    update comments
+    set con_id = #{conId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      com_time = #{comTime,jdbcType=TIMESTAMP},
+      com_subid = #{comSubid,jdbcType=VARCHAR},
+      com_upvote = #{comUpvote,jdbcType=INTEGER}
+    where com_id = #{comId,jdbcType=BIGINT}
+  </update>
+</mapper>

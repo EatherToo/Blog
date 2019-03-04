@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.blog.dao.UpvoteMapper" >
+  <resultMap id="BaseResultMap" type="com.blog.entity.Upvote" >
+    <id column="upu_id" property="upuId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="user_ip" property="userIp" jdbcType="VARCHAR" />
+    <result column="upv_state" property="upvState" jdbcType="BIT" />
+    <result column="upv_time" property="upvTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    upu_id, user_id, user_ip, upv_state, upv_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from upvote
+    where upu_id = #{upuId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from upvote
+    where upu_id = #{upuId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.blog.entity.Upvote" >
+    insert into upvote (upu_id, user_id, user_ip, 
+      upv_state, upv_time)
+    values (#{upuId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{userIp,jdbcType=VARCHAR}, 
+      #{upvState,jdbcType=BIT}, #{upvTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.blog.entity.Upvote" >
+    insert into upvote
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="upuId != null" >
+        upu_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="userIp != null" >
+        user_ip,
+      </if>
+      <if test="upvState != null" >
+        upv_state,
+      </if>
+      <if test="upvTime != null" >
+        upv_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="upuId != null" >
+        #{upuId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userIp != null" >
+        #{userIp,jdbcType=VARCHAR},
+      </if>
+      <if test="upvState != null" >
+        #{upvState,jdbcType=BIT},
+      </if>
+      <if test="upvTime != null" >
+        #{upvTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.blog.entity.Upvote" >
+    update upvote
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userIp != null" >
+        user_ip = #{userIp,jdbcType=VARCHAR},
+      </if>
+      <if test="upvState != null" >
+        upv_state = #{upvState,jdbcType=BIT},
+      </if>
+      <if test="upvTime != null" >
+        upv_time = #{upvTime,jdbcType=DATE},
+      </if>
+    </set>
+    where upu_id = #{upuId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.blog.entity.Upvote" >
+    update upvote
+    set user_id = #{userId,jdbcType=BIGINT},
+      user_ip = #{userIp,jdbcType=VARCHAR},
+      upv_state = #{upvState,jdbcType=BIT},
+      upv_time = #{upvTime,jdbcType=DATE}
+    where upu_id = #{upuId,jdbcType=BIGINT}
+  </update>
+</mapper>

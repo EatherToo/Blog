@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.blog.dao.UserContentMapper" >
+  <resultMap id="BaseResultMap" type="com.blog.entity.UserContent" >
+    <id column="con_id" property="conId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="con_title" property="conTitle" jdbcType="VARCHAR" />
+    <result column="con_cate" property="conCate" jdbcType="VARCHAR" />
+    <result column="con_privacy" property="conPrivacy" jdbcType="BIT" />
+    <result column="con_time" property="conTime" jdbcType="TIMESTAMP" />
+    <result column="user_img" property="userImg" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.blog.entity.UserContent" extends="BaseResultMap" >
+    <result column="con_content" property="conContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    con_id, user_id, con_title, con_cate, con_privacy, con_time, user_img, user_name
+  </sql>
+  <sql id="Blob_Column_List" >
+    con_content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user_content
+    where con_id = #{conId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user_content
+    where con_id = #{conId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.blog.entity.UserContent" >
+    insert into user_content (con_id, user_id, con_title, 
+      con_cate, con_privacy, con_time, 
+      user_img, user_name, con_content
+      )
+    values (#{conId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{conTitle,jdbcType=VARCHAR}, 
+      #{conCate,jdbcType=VARCHAR}, #{conPrivacy,jdbcType=BIT}, #{conTime,jdbcType=TIMESTAMP}, 
+      #{userImg,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{conContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.blog.entity.UserContent" >
+    insert into user_content
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="conId != null" >
+        con_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="conTitle != null" >
+        con_title,
+      </if>
+      <if test="conCate != null" >
+        con_cate,
+      </if>
+      <if test="conPrivacy != null" >
+        con_privacy,
+      </if>
+      <if test="conTime != null" >
+        con_time,
+      </if>
+      <if test="userImg != null" >
+        user_img,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="conContent != null" >
+        con_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="conId != null" >
+        #{conId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="conTitle != null" >
+        #{conTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="conCate != null" >
+        #{conCate,jdbcType=VARCHAR},
+      </if>
+      <if test="conPrivacy != null" >
+        #{conPrivacy,jdbcType=BIT},
+      </if>
+      <if test="conTime != null" >
+        #{conTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userImg != null" >
+        #{userImg,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="conContent != null" >
+        #{conContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.blog.entity.UserContent" >
+    update user_content
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="conTitle != null" >
+        con_title = #{conTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="conCate != null" >
+        con_cate = #{conCate,jdbcType=VARCHAR},
+      </if>
+      <if test="conPrivacy != null" >
+        con_privacy = #{conPrivacy,jdbcType=BIT},
+      </if>
+      <if test="conTime != null" >
+        con_time = #{conTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userImg != null" >
+        user_img = #{userImg,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="conContent != null" >
+        con_content = #{conContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where con_id = #{conId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.blog.entity.UserContent" >
+    update user_content
+    set user_id = #{userId,jdbcType=BIGINT},
+      con_title = #{conTitle,jdbcType=VARCHAR},
+      con_cate = #{conCate,jdbcType=VARCHAR},
+      con_privacy = #{conPrivacy,jdbcType=BIT},
+      con_time = #{conTime,jdbcType=TIMESTAMP},
+      user_img = #{userImg,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      con_content = #{conContent,jdbcType=LONGVARCHAR}
+    where con_id = #{conId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.blog.entity.UserContent" >
+    update user_content
+    set user_id = #{userId,jdbcType=BIGINT},
+      con_title = #{conTitle,jdbcType=VARCHAR},
+      con_cate = #{conCate,jdbcType=VARCHAR},
+      con_privacy = #{conPrivacy,jdbcType=BIT},
+      con_time = #{conTime,jdbcType=TIMESTAMP},
+      user_img = #{userImg,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR}
+    where con_id = #{conId,jdbcType=BIGINT}
+  </update>
+</mapper>
