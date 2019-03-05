@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@Controller
+//@Controller
 public class IndexController extends HttpServlet{
-    @RequestMapping(value = "/demo")
+//    @RequestMapping(value = "/demo")
     public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws IOException {
         httpServletResponse.setContentType("text/html");
         PrintWriter out =  httpServletResponse.getWriter();
         out.println("Hello World! in doGet Method");
 
     }
+
 }
