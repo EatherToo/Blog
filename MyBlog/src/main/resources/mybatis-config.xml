@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- 开启驼峰匹配 -->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- 别名 -->
+    <typeAliases>
+        <!--存放实体类的package-->
+        <package name="com.blog.entity" />
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="tk.mybatis.mapper.mapperhelper.MapperInterceptor">
+            <!--主键自增回写方法,默认值MYSQL,详细说明请看文档HSQLDB-->
+            <property name="IDENTITY" value="MYSQL"/>
+
+            <!--可选参数一共3个，对应0,1,2,分别为SequenceName，ColumnName,PropertyName-->
+            <property name="seqFormat" value="{0}.nextval"/>
+
+            <!--&lt;!&ndash;通用Mapper接口，多个通用接口用逗号隔开&ndash;&gt;-->
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+         <!--&lt;!&ndash;自定义分页插件 &ndash;&gt;-->
+        <!--<plugin interceptor="com.blog.common.PageHelper"/>-->
+
+    </plugins>
+</configuration>

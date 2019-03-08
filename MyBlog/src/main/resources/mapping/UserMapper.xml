@@ -12,11 +12,11 @@
     <result column="user_enable" property="userEnable" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    user_id, user_email, user_password, user_phone, user_nickname, user_state, user_img, 
+    user_id, user_email, user_password, user_phone, user_nickname, user_state, user_img,
     user_enable
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from user
     where user_id = #{userId,jdbcType=BIGINT}
@@ -26,11 +26,11 @@
     where user_id = #{userId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.blog.entity.User" >
-    insert into user (user_id, user_email, user_password, 
-      user_phone, user_nickname, user_state, 
+    insert into user (user_id, user_email, user_password,
+      user_phone, user_nickname, user_state,
       user_img, user_enable)
-    values (#{userId,jdbcType=BIGINT}, #{userEmail,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, 
-      #{userPhone,jdbcType=CHAR}, #{userNickname,jdbcType=VARCHAR}, #{userState,jdbcType=BIT}, 
+    values (#{userId,jdbcType=BIGINT}, #{userEmail,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR},
+      #{userPhone,jdbcType=CHAR}, #{userNickname,jdbcType=VARCHAR}, #{userState,jdbcType=BIT},
       #{userImg,jdbcType=VARCHAR}, #{userEnable,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.blog.entity.User" >
