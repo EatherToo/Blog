@@ -1,7 +1,8 @@
-package com.blog.test;
+package test.blog;
 
 import com.blog.entity.User;
 import com.blog.service.UserService;
+import org.apache.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -10,9 +11,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml","classpath:springMVC-servlet.xml"})
-public class test extends AbstractJUnit4SpringContextTests {
+public class Test extends AbstractJUnit4SpringContextTests {
     @Autowired
     UserService userService;
+
+    private static Logger logger = Logger.getLogger(Test.class);
 
     /**
      * 单元测试
@@ -21,7 +24,6 @@ public class test extends AbstractJUnit4SpringContextTests {
     public void testSave(){
         User user = new User();
         user.setUserNickname("Eve");
-        System.out.println(1111);
         userService.regist(user);
     }
 

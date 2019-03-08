@@ -27,7 +27,7 @@
 
     <!-- 配置数据源 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${driverClasss}"/>
+        <property name="driverClassName" value="${driverClass}"/>
         <property name="url" value="${jdbcUrl}"/>
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
@@ -46,7 +46,7 @@
     <!-- 整合spring 与 Mybatis -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <!-- 配置Mybati的核心配置文件 -->
+        <!-- 配置Mybatis的核心配置文件 -->
         <property name="configLocation" value="classpath:mybatis-config.xml" />
 
         <!-- 自动扫描mapping.xml文件 -->

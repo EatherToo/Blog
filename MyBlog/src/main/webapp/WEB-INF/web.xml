@@ -7,17 +7,23 @@
 
   <display-name>Blog</display-name>
 
+  <context-param>
+    <param-name>webAppRootKey</param-name>
+    <param-value>webApp.root</param-value>
+  </context-param>
+
+  <!--配置日志-->
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
+
   <!--配置mybatis的配置文件-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
       classpath*:spring-mybatis.xml
     </param-value>
-  </context-param>
-
-  <context-param>
-    <param-name>log4jConfigLocation</param-name>
-    <param-value>classpath:log4j.properties</param-value>
   </context-param>
 
   <!-- 编码过滤器 解决POST乱码问题-->
@@ -79,4 +85,5 @@
   <session-config>
     <session-timeout>15</session-timeout>
   </session-config>
+
 </web-app>
