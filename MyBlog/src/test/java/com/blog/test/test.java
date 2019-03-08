@@ -1,10 +1,7 @@
 package com.blog.test;
 
-import com.blog.controller.IndexController;
 import com.blog.entity.User;
 import com.blog.service.UserService;
-import com.blog.service.impl.UserServiceImpl;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -17,6 +14,9 @@ public class test extends AbstractJUnit4SpringContextTests {
     @Autowired
     UserService userService;
 
+    /**
+     * 单元测试
+     */
     @org.junit.Test
     public void testSave(){
         User user = new User();

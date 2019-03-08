@@ -5,8 +5,9 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
-  <display-name>dreamland-web</display-name>
+  <display-name>Blog</display-name>
 
+  <!--配置mybatis的配置文件-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
@@ -43,12 +44,12 @@
     <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
 
-  <!-- spring mvc servlet-->
   <servlet>
     <servlet-name>SpringMVC</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
+      <!--更改Spring配置文件的读取路径，Spring配置文件可以不放到WEB-INF文件夹下-->
       <param-value>classpath:springMVC-servlet.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
@@ -57,7 +58,6 @@
   <!-- servlet-mapping -->
   <servlet-mapping>
     <servlet-name>SpringMVC</servlet-name>
-    <!-- 此处也可以配置成 *.do 形式 -->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
@@ -75,7 +75,7 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
-  <!-- session配置 -->
+  <!-- session配置, 失效时间为15分钟 -->
   <session-config>
     <session-timeout>15</session-timeout>
   </session-config>

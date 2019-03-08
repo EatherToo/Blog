@@ -8,8 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a588e9e8-e24b-4104-8163-8c631d05d90d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/springMVC-servlet.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,16 +26,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/springMVC-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/RoleResourceMapper.java">
+        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/RoleMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
@@ -41,13 +35,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java">
+        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/UserMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="24" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -55,57 +46,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/UpvoteMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/CommentsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/ResourceMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/spring-mybatis.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-              <folding>
-                <element signature="e#1531#1548#0" expanded="true" />
-                <element signature="e#1586#1598#0" expanded="true" />
-                <element signature="e#1641#1654#0" expanded="true" />
-                <element signature="e#1697#1710#0" expanded="true" />
-                <element signature="e#1781#1797#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/jdbc.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="99" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/controller/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="765">
+              <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -119,11 +97,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,11 +160,11 @@
         <option value="$PROJECT_DIR$/MyBlog/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/MyBlog/src/main/resources/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java" />
-        <option value="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/UserService.java" />
-        <option value="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/UserService.java" />
         <option value="$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java" />
+        <option value="$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/impl/UserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -355,7 +345,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551851544349" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551851897408" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/SpringDemoInIDEA" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -681,12 +671,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
+      <item itemvalue="Application.Test" />
       <item itemvalue="JUnit.Test" />
       <item itemvalue="JUnit.Test.testSave" />
-      <item itemvalue="Application.Test" />
       <item itemvalue="JUnit.test" />
       <item itemvalue="JUnit.test.testSave" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
     </list>
     <recent_temporary>
       <list>
@@ -710,7 +700,10 @@
       <updated>1551666790615</updated>
       <workItem from="1551666792629" duration="8543000" />
       <workItem from="1551676643551" duration="3129000" />
-      <workItem from="1551754626427" duration="15334000" />
+      <workItem from="1551754626427" duration="15794000" />
+      <workItem from="1551878274564" duration="2190000" />
+      <workItem from="1551928233158" duration="1757000" />
+      <workItem from="1552035900794" duration="394000" />
     </task>
     <task id="LOCAL-00001" summary="创建实体类">
       <created>1551710277582</created>
@@ -726,7 +719,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551805892459</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="重新配置web.xml">
+      <created>1551851676020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551851676020</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -762,7 +762,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27006000" />
+    <option name="totallyTimeSpent" value="31807000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -777,7 +777,7 @@
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25746268" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -787,14 +787,14 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36590436" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991684" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5114345" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952183" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32917964" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32952183" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.33056134" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.27962577" />
@@ -873,7 +873,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="创建实体类" />
     <MESSAGE value="接口设计" />
-    <option name="LAST_COMMIT_MESSAGE" value="接口设计" />
+    <MESSAGE value="重新配置web.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="重新配置web.xml" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -905,9 +906,6 @@
     <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/RoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/mapping/CommentsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -928,9 +926,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/springMVC.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/springMVC.xml" />
     <entry file="file://$PROJECT_DIR$/MyBlog/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -952,20 +948,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/mapping/user.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/spring-mvc.xml" />
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/mapping/user.xml" />
     <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-310">
@@ -994,37 +978,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/UserMapper.java">
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/spring-mybatis.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/RoleResourceMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="555">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1035,19 +992,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="285">
           <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1055,24 +1002,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/resources/spring-mybatis.xml">
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/springMVC-servlet.xml" />
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/RoleResourceMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding>
-            <element signature="e#1531#1548#0" expanded="true" />
-            <element signature="e#1586#1598#0" expanded="true" />
-            <element signature="e#1641#1654#0" expanded="true" />
-            <element signature="e#1697#1710#0" expanded="true" />
-            <element signature="e#1781#1797#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/springMVC-servlet.xml">
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/RoleMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/UpvoteMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/CommentsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/ResourceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1083,10 +1045,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MyBlog/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+        <state relative-caret-position="765">
+          <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/test/java/com/blog/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyBlog/src/main/java/com/blog/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
