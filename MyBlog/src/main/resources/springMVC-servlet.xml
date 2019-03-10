@@ -18,17 +18,18 @@
     <!--视图配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
-            <value>/</value>
+            <value>WEB-INF/views/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>
         </property>
     </bean>
-
-
+    <!--cache-period="31556926"-->
+    <!--cache-period="31556926"-->
+    <!--cache-period="31556926"-->
     <!-- 配置静态资源访问地址-->
-    <mvc:resources mapping="/images/**" location="/images/" cache-period="31556926"/>
-    <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/>
-    <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>
+    <mvc:resources mapping="/images/**" location="/images/" />
+    <mvc:resources mapping="/js/**" location="/js/" />
+    <mvc:resources mapping="/css/**" location="/css/" />
 
 </beans>

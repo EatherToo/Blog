@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+label{
+    font-size: 1.2em;
+}
+
+.main{
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+}
+.box{
+    height: fit-content;
+    background: white;
+    border-radius: 4px;
+    margin-top: 12%;
+    text-align: center;
+    padding: 10px;
+}
+.content{
+    padding: 10px;
+}
+.btn{
+    background: deepskyblue;
+    color: white;
+}
+.another-login{
+    margin-top: 5px;
+}
+.another-login > a{
+    color: red;
+}
