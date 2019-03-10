@@ -5,85 +5,87 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
-  <display-name>Blog</display-name>
+    <display-name>Blog</display-name>
 
-  <context-param>
-    <param-name>webAppRootKey</param-name>
-    <param-value>webApp.root</param-value>
-  </context-param>
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>webApp.root</param-value>
+    </context-param>
 
-  <!--配置日志-->
-  <context-param>
-    <param-name>log4jConfigLocation</param-name>
-    <param-value>classpath:log4j.properties</param-value>
-  </context-param>
+    <!--配置日志-->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.util.WebAppRootListener</listener-class>
+    </listener>
 
-  <!--配置mybatis的配置文件-->
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>
-      classpath*:spring-mybatis.xml
-    </param-value>
-  </context-param>
+    <context-param>
+        <param-name>log4jRefreshInterval</param-name>
+        <param-value>3000</param-value>
+    </context-param>
+    <!--配置mybatis的配置文件-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath*:spring-mybatis.xml
+        </param-value>
+    </context-param>
 
-  <!-- 编码过滤器 解决POST乱码问题-->
-  <filter>
-    <filter-name>encodingFilter</filter-name>
-    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-    <init-param>
-      <param-name>encoding</param-name>
-      <param-value>UTF-8</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>encodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+    <!-- 编码过滤器 解决POST乱码问题-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-  <!-- spring监听器 -->
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+    <!-- spring监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
-  <!-- 防止spring内存溢出监听器，比如quartz -->
-  <listener>
-    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-  </listener>
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <!--更改Spring配置文件的读取路径，Spring配置文件可以不放到WEB-INF文件夹下-->
+            <param-value>classpath:springMVC-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+    <!-- servlet-mapping -->
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 
-  <servlet>
-    <servlet-name>SpringMVC</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <!--更改Spring配置文件的读取路径，Spring配置文件可以不放到WEB-INF文件夹下-->
-      <param-value>classpath:springMVC-servlet.xml</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-    <async-supported>true</async-supported>
-  </servlet>
-  <!-- servlet-mapping -->
-  <servlet-mapping>
-    <servlet-name>SpringMVC</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+    <!-- 指明对于如下资源文件不采用spring的过滤器 -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.xml</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
 
-  <!-- 指明对于如下资源文件不采用spring的过滤器 -->
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.xml</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.css</url-pattern>
-  </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
-
-  <!-- session配置, 失效时间为15分钟 -->
-  <session-config>
-    <session-timeout>15</session-timeout>
-  </session-config>
+    <!-- session配置, 失效时间为15分钟 -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 
 </web-app>

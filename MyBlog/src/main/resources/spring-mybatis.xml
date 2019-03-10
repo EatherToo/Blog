@@ -12,7 +12,7 @@
     <!-- 自动扫描 -->
     <context:component-scan base-package="com.blog.service.impl"/>
 
-    <!--加载配置文件-->
+    <!--加载jdbc相关的配置文件-->
     <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
@@ -21,6 +21,7 @@
         </property>
         <property name="fileEncoding" value="UTF-8"/>
     </bean>
+    <!--引用上面的jdbc配置-->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
         <property name="properties" ref="configProperties"/>
     </bean>
@@ -45,6 +46,7 @@
 
     <!-- 整合spring 与 Mybatis -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--引用配置好的数据源-->
         <property name="dataSource" ref="dataSource"/>
         <!-- 配置Mybatis的核心配置文件 -->
         <property name="configLocation" value="classpath:mybatis-config.xml" />
