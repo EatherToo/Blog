@@ -12,7 +12,7 @@
 
     <mvc:default-servlet-handler />
     <!-- 自动扫描 -->
-    <context:component-scan base-package="com.blog.controller"/>
+    <context:component-scan base-package="com.blog.controller com.blog.common"/>
     <mvc:annotation-driven />
 
     <!--视图配置-->
@@ -24,6 +24,7 @@
             <value>.jsp</value>
         </property>
     </bean>
+
     <!--cache-period="31556926"-->
     <!--cache-period="31556926"-->
     <!--cache-period="31556926"-->
